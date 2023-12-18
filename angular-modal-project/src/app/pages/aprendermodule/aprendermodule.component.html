@@ -1,0 +1,74 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLongTitle">NIVEL 1</h5>
+                
+                <div class="heart-container">
+                    <span class="heart">❤️</span> 
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                    <span class="heart">❤️</span>
+                    <!-- Puedes personalizar el emoji del corazón según tu preferencia -->
+                    <span class="heart-count">5</span>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            <div class="modal-body text-center">
+
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+                <h5  class="mt-3 mb-4 text-center">¿Cual de estas imagenes se refiere a "Perdonar"?</h5>
+                <!-- Imágenes -->
+                <div class="container">
+                    <div class="card" (click)="onTarjetaClick(1)" [class.selected]="tarjetaSeleccionada === 1" [ngClass]="{'selected-card': tarjetaSeleccionada === 1}">
+                        <img src="../assets/images/1.png" class="card-img-top" alt="Imagen 1">
+                           
+                    </div>
+                    <div class="card" (click)="onTarjetaClick(2)" [class.selected]="tarjetaSeleccionada === 2"  [ngClass]="{'selected-card': tarjetaSeleccionada === 2}">
+                        <img src="../assets/images/2.png" class="card-img-top" alt="Imagen 2">
+                    
+                    </div>
+                    <div class="card" (click)="onTarjetaClick(3)" [class.selected]="tarjetaSeleccionada === 3"  [ngClass]="{'selected-card': tarjetaSeleccionada === 3}">
+                        <img src="../assets/images/3.png" class="card-img-top" alt="Imagen 3">
+                    
+                    </div>
+                        
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+                
+                
+                <!-- Modifica el botón "Saltar" para que sea condicional -->
+                <button *ngIf="mostrarBotonSaltar" type="button" class="btn btn-outline-primary btn-lg rounded-pill" (click)="saltar()">Saltar</button>
+
+  <!-- Botón para comprobar -->
+                <div *ngIf="!respuestaComprobada">
+                    <button type="button" class="btn btn-primary btn-lg rounded-pill" (click)="comprobarRespuesta()"
+                        [disabled]="tarjetaSeleccionada === null">Comprobar</button>
+                </div>
+<!-- Botón para continuar -->
+
+                
+                <div *ngIf="respuestaComprobada" class="continuar-container">
+                    <div *ngIf="respuestaComprobada" class="mensaje-container" [ngClass]="{'mensaje-incorrecto': !esRespuestaCorrecta, 'mensaje-correcto': esRespuestaCorrecta}">
+                        <p>{{ mensajeRespuesta }}</p>
+                    </div>
+                    <div class="boton-continuar-container">
+                        <button type="button" class="btn btn-primary btn-lg rounded-pill" (click)="continuar()">Continuar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

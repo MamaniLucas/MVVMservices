@@ -1,0 +1,86 @@
+
+/* Ajustes para el tamaño de las imágenes y el centrado */
+.card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 2px solid #000000;
+  margin: 0 10px;
+  /* Ajusta el margen horizontal según sea necesario */
+}
+
+.card:hover {
+  transform: scale(1.1);
+  /* Ajusta el valor de escala al hacer hover según sea necesario */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para el centrado y separación del contenido del modal */
+.modal-body {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  /* Ajusta el margen superior según sea necesario */
+}
+
+.progress {
+  width: 50%;
+  /* Ajusta el ancho de la barra de progreso según sea necesario */
+  margin: 0 auto;
+  /* Centra la barra de progreso horizontalmente */
+}
+
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  /* Ajusta la altura según sea necesario */
+}
+.modal-title {
+  margin-bottom: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 500px;
+  /* Ajusta el padding para mantener la distancia de los lados */
+}
+
+/* Ajusta el margen derecho del botón Comprobar para que esté más cerca del extremo derecho */
+.modal-footer .btn-primary:last-child {
+  margin-right: 0;
+}
+.selected-card {
+  background-color: #e1faff;
+  border:2px solid #00e1ff;
+  /* Cambia el color del borde cuando está seleccionado */
+}
+
+.continuar-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Estilos para separar visualmente el mensaje y el botón "Continuar" */
+.mensaje-container {
+  margin-right: 700px;
+  /* Ajusta la distancia según sea necesario */
+}
+
+
+
+.mensaje-incorrecto {
+  color: red;
+}
+
+.mensaje-correcto {
+  color: green;
+}
